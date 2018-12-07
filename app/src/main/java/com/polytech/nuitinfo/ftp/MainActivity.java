@@ -5,9 +5,19 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.polytech.nuitinfo.ftp.weather.connection.JSONWeatherDownloader;
 import com.polytech.nuitinfo.ftp.weather.connection.JSONWeatherParser;
@@ -21,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView weatherIcon;
     private TextView weatherTemperature;
     private TextView weatherCity;
+    private WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
         weatherTemperature = findViewById(R.id.activity_main_weather_temperature);
         weatherCity = findViewById(R.id.activity_main_weather_city);
         weatherIcon = findViewById(R.id.activity_main_weather_icon);
+
+
+        webView = findViewById(R.id.webView);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.setWebChromeClient(new WebChromeClient());
+        webView.loadUrl("file:///android_asset/index.html");
+        webView.setWebViewClient(new WebViewClient());
+
+
+
 
         JSONWeatherTask task = new JSONWeatherTask();
         task.execute(city);
