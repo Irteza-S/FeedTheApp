@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(weather);
 
             Double temp = weather.getTemperature().getValue() - 273.15;
-            weatherTextView.setText(String.valueOf(temp) + "°C");
+            weatherTextView.setText(String.valueOf(temp.intValue()) + "°C");
         }
     }
 }
