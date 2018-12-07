@@ -12,13 +12,34 @@
         android:layout_width="match_parent"
         android:layout_height="100dp">
 
+        <Button
+            android:id="@+id/activity_main_weather_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"/>
+
+        <ImageView
+            android:id="@+id/activity_main_weather_icon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="25dp"/>
+
         <TextView
-            android:id="@+id/activity_main_weather_textview"
+            android:id="@+id/activity_main_weather_temperature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Meteo"
-            android:textSize="48dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:layout_marginRight="25dp"
+            android:textSize="35dp"/>
+        <TextView
+            android:id="@+id/activity_main_weather_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="20dp"
+            android:textSize="30dp"
+            android:maxLength="15"/>
 
 
     </FrameLayout>

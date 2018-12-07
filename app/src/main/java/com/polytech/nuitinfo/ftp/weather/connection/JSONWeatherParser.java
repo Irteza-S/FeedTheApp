@@ -2,7 +2,6 @@ package com.polytech.nuitinfo.ftp.weather.connection;
 
 import com.polytech.nuitinfo.ftp.weather.model.Location;
 import com.polytech.nuitinfo.ftp.weather.model.Weather;
-import com.polytech.nuitinfo.ftp.weather.model.WeatherType;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,7 +36,7 @@ public class JSONWeatherParser {
         JSONObject JSONWeather = jArr.getJSONObject(0);
         weather.getCondition().setID( getInt( "id", JSONWeather ) );
         weather.getCondition().setDescription( getString( "description", JSONWeather ) );
-        weather.getCondition().setType( WeatherType.strToWeatherType( getString( "main", JSONWeather ) ) );
+        weather.getCondition().setType(getString( "main", JSONWeather ) );
         weather.getCondition().setIcon( getString( "icon", JSONWeather ) );
 
         JSONObject mainObj = getObject("main", jObj);

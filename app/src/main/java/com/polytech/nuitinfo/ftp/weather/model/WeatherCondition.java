@@ -3,7 +3,7 @@ package com.polytech.nuitinfo.ftp.weather.model;
 public class WeatherCondition {
 
     private Integer     ID;
-    private WeatherType type;
+    private String type;
     private String      description;
     private String      icon;
     private float       pressure;
@@ -17,11 +17,11 @@ public class WeatherCondition {
         this.ID = ID;
     }
 
-    public WeatherType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType( WeatherType type ) {
+    public void setType( String type ) {
         this.type = type;
     }
 
